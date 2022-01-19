@@ -2,7 +2,6 @@ package staging;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 /*
  * In Text Twist, players try to score points by forming words using the letters from a 6-letter scrambled word. 
@@ -25,25 +24,25 @@ import java.util.TreeSet;
  * For example, if the word is arches, and the player guessed arches and chaser, add 108 pts for both words.
  */
 public class TextTwist {
-	
+
 	public static int totalPoints(String[] words, String scramble) {
 		int points = 0;
-		
+
 		for (String w : words) {
 			Set<Character> letters = new HashSet<Character>();
-			
+
 			if (w.length() < 1 || w.length() > 6) {
 				points += 0; // invalid length
 			}
-			
+
 			int count = 0;
 			for (char c : w.toCharArray()) {
-				if (scramble.contains(c+"") && !letters.contains(c)) {
+				if (scramble.contains(c + "") && !letters.contains(c)) {
 					letters.add(c);
 					count++;
-					
+
 					if (count == w.length()) {
-						switch(w.length()) {
+						switch (w.length()) {
 						case 3:
 							points += 1;
 							break;
@@ -66,12 +65,13 @@ public class TextTwist {
 		}
 		return points;
 	}
-	
+
 	public static void main(String[] args) {
-		System.out.println(totalPoints(new String[]{"cat", "create", "sat"}, "caster"));
-		System.out.println(totalPoints(new String[]{"trance", "recant"}, "recant"));
-        System.out.println(totalPoints(new String[]{"dote", "dotes", "toes", "set", "dot", "dots", "sted"}, "tossed"));
-        System.out.println(totalPoints(new String[] {"arches", "chaser"}, "arches"));
+		System.out.println(totalPoints(new String[] { "cat", "create", "sat" }, "caster"));
+		System.out.println(totalPoints(new String[] { "trance", "recant" }, "recant"));
+		System.out.println(totalPoints(
+				new String[] { "dote", "dotes", "toes", "set", "dot", "dots", "sted" }, "tossed"));
+		System.out.println(totalPoints(new String[] { "arches", "chaser" }, "arches"));
 	}
 
 }
