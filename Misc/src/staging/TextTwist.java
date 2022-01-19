@@ -33,36 +33,35 @@ public class TextTwist {
 
 			if (w.length() < 3 || w.length() > 6) {
 				points += 0; // invalid length
-			}
+			} else {
+				int count = 0;
+				for (char c : w.toCharArray()) {
+					if (scramble.contains(c + "") && !letters.contains(c)) {
+						letters.add(c);
+						count++;
 
-			int count = 0;
-			for (char c : w.toCharArray()) {
-				if (scramble.contains(c + "") && !letters.contains(c)) {
-					letters.add(c);
-					count++;
-
-					if (count == w.length()) {
-						switch (w.length()) {
-						case 3:
-							points += 1;
-							break;
-						case 4:
-							points += 2;
-							break;
-						case 5:
-							points += 3;
-							break;
-						case 6:
-							points += 54;
-							break;
+						if (count == w.length()) {
+							switch (w.length()) {
+							case 3:
+								points += 1;
+								break;
+							case 4:
+								points += 2;
+								break;
+							case 5:
+								points += 3;
+								break;
+							case 6:
+								points += 54;
+								break;
+							}
 						}
+					} else { // invalid word
+						count = 0;
+						break;
 					}
-				} else { // invalid word
-					count = 0;
-					break;
 				}
 			}
-		}
 		return points;
 	}
 
