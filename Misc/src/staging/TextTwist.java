@@ -31,7 +31,7 @@ public class TextTwist {
 		for (String w : words) {
 			Set<Character> letters = new HashSet<Character>();
 
-			if (w.length() < 1 || w.length() > 6) {
+			if (w.length() < 3 || w.length() > 6) {
 				points += 0; // invalid length
 			}
 
