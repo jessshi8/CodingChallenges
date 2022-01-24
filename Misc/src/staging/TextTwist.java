@@ -62,6 +62,7 @@ public class TextTwist {
 					}
 				}
 			}
+		}
 		return points;
 	}
 
