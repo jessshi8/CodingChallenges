@@ -49,3 +49,19 @@ Note if the total goes over, carry the sum on to the next digit
 // Place 4 between the two digits to make 747
 // Carry the 1 to make 847
  */
+function multiplyBy11(str) {
+	
+}
+
+/**
+Problem 3. Logical Reasoning Question
+Q: In this logic question, you are standing in a room with three light switches. 
+The switches all correspond to three different light bulbs in an adjacent room 
+that you cannot see into. With all the light switches starting in the off position, 
+how can you find out which switch connects to which light bulb?
+
+A: Flip the first two switches on and wait for a substantial amount of time for the bulbs to heat up.
+Then switch off the middle switch and move to the adjacent room. The bulb that is on corresponds with 
+the first switch; the bulb that is off and warm to the touch corresponds to the middle switch, and the 
+bulb that is off and cold to the touch corresponds to the last switch. 
+ */
