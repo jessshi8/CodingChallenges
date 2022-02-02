@@ -49,9 +49,18 @@ Note if the total goes over, carry the sum on to the next digit
 // Place 4 between the two digits to make 747
 // Carry the 1 to make 847
  */
-function multiplyBy11(str) {
-	
+/** SOURCE: http://mathandmultimedia.com/2015/04/03/why-the-multiplication-by-11-trick-works/ */
+function multiplyBy11(abcd) {
+	let abcd0 = abcd * "10";
+	let result = parseInt(abcd0) + parseInt(abcd);
+	return result.toString();
 }
+console.log(multiplyBy11("11"));
+console.log(multiplyBy11("111111111"));
+console.log(multiplyBy11("1213200020"));
+console.log(multiplyBy11("1217197941"));
+console.log(multiplyBy11("23"));
+console.log(multiplyBy11("77"));
 
 /**
 Problem 3. Logical Reasoning Question
@@ -61,7 +70,7 @@ that you cannot see into. With all the light switches starting in the off positi
 how can you find out which switch connects to which light bulb?
 
 A: Flip the first two switches on and wait for a substantial amount of time for the bulbs to heat up.
-Then switch off the middle switch and move to the adjacent room. The bulb that is on corresponds with 
-the first switch; the bulb that is off and warm to the touch corresponds to the middle switch, and the 
-bulb that is off and cold to the touch corresponds to the last switch. 
+Then switch off the middle switch and move to the adjacent room. The bulb that is ON corresponds with 
+the first switch; the bulb that is OFF and WARM to the touch corresponds to the middle switch, and the 
+bulb that is OFF and COLD to the touch corresponds to the last switch. 
  */
